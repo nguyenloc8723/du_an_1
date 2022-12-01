@@ -9,4 +9,8 @@
     <link rel="stylesheet" href="public/sp.css">
     <link rel="stylesheet" href="public/profile.css">
     
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script src="../ckfinder/ckfinder.js"></script>
+    <link rel="stylesheet" href="public/cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>

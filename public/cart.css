@@ -1,0 +1,43 @@
+.cart-header{
+    width: 100%;
+   
+}
+table   {
+    border-collapse: collapse;
+    margin-bottom: 100px;
+}
+thead{
+     background: #ee4d2d;
+}
+thead tr td{
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+tbody tr td{
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.4);
+    height: 50px;
+    width: 100px;
+    
+}
+tbody tr td img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.p-header{
+
+    padding: 50px 10px;
+    font-size: 20px;
+    font-weight: bold;
+   
+}
+.p-header::after{
+    content: '';
+    display: block;
+    border-bottom: 2px solid #ee4d2d; 
+    width: 25px;
+    padding-top: 10px;
+}

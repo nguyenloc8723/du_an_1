@@ -11,4 +11,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script src="../ckfinder/ckfinder.js"></script>
   </head>
