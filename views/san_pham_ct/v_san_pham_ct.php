@@ -138,18 +138,10 @@ if (isset($_SESSION['users'])) {
                     <span style="color:#D41830;"><?= $_SESSION['err_noidung'] ?></span>
                 <?php } ?>
                 <button type="submit" name='cmt' style="display: block; width: 120px; height: 40px; margin-top: 15px;background-color: #D41830; color: #fff; font-size: 18px; border: none;">Gửi</button>
-                <!-- <form action="" method="post">
-                <input type="hidden" name="id_kh" id="" value="<?= $data_user[0]['id_kh'] ?>">
-                <input type="hidden" name="id_hh" id="" value="<?= $_GET['id_hh'] ?>">
-                <textarea rows="5" style="width: 50%; font-size: 18px; outline: none; padding: 10px; resize: none;" placeholder="Enter your comments here..." name="noi_dung"></textarea> -->
-
             </form>
         </div>
     <?php } ?>
-    <!-- <?php
-            unset($_SESSION['err_noidung']);
-            unset($_SESSION['err_img']);
-            ?> -->
+    
     <?php if (!isset($_SESSION['users'])) { ?>
         <div style="margin: 2rem; text-align: center; color: #D41830;">
             <h2>Vui lòng đăng nhập để bình luận!</h2>

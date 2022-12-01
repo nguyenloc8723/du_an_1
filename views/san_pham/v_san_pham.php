@@ -1,6 +1,7 @@
 <nav>
     <img src="public/images/mau-banner-quang-cao-khuyen-mai.jpg" alt="" class="banner">
 </nav>
+
 <main>
     <div class="danhmuc">
         <h3 class="danhmuc1"> <i class="fa-solid fa-list"></i> Tất cả danh mục</h3>
@@ -36,14 +37,30 @@
 
         </div>
         <div class="chuyentrang">
-            <button class="back">&#60;</button>
-            <button class="next" style="background: #ee4d2d; color: #fff;">1</button>
-            <button class="next">2</button>
-            <button class="next">3</button>
-            <button class="next">4</button>
-            <button class="next">5</button>
-            <button class="back">&#62;</button>
+            <div class="panigation">
+                <ul>
+                    <?php if ($page == 1) { ?>
+                        <li><a class="hidden" href="?act=san-pham&page=Sản%20phẩm&page_num=<?= $page - 1 ?>"><i class="fa-solid fa-angle-left"></i></a></li>
+                    <?php } else { ?>
+                        <li><a href="?act=san-pham&page=Sản%20phẩm&page_num=<?= $page - 1 ?>"><i class="fa-solid fa-angle-left"></i></a></li>
+                    <?php } ?>
 
+                    <?php for ($i = 1; $i <=  $total_Page; $i++) : ?>
+                        <?php if ($page == $i) { ?>
+                            <li><a class="active" href="?act=san-pham&page=Sản%20phẩm&page_num=<?= $i ?>"><?= $i ?></a></li>
+                        <?php } else { ?>
+                            <li><a href="?act=san-pham&page=Sản%20phẩm&page_num=<?= $i ?>"><?= $i ?></a></li>
+                        <?php } ?>
+                    <?php endfor; ?>
+
+                    <?php if($page == $total_Page) {?>
+                        <li><a class="hidden" href="?act=san-pham&page=Sản%20phẩm&page_num=<?= $page + 1 ?>"><i class="fa-solid fa-angle-right"></i></a></li>
+                    <?php } else {?>
+                        <li><a href="?act=san-pham&page=Sản%20phẩm&page_num=<?= $page + 1 ?>"><i class="fa-solid fa-angle-right"></i></a></li>
+                    <?php }?>
+                </ul>
+            </div>
         </div>
     </div>
+
 </main>
