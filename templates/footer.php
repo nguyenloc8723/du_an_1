@@ -49,7 +49,6 @@
     </footer>
     <script>
         
-        console.log(img);
         var arrImg = [
             "public/images/mau-banner-quang-cao-khuyen-mai.jpg",
             "public/images/Banner2.jpg",
@@ -75,4 +74,12 @@
             }
         }
         startImg();
+
+        const info = document.getElementById('info');
+        const option = document.querySelector('.option');
+        console.log(option);
+
+        info.addEventListener('click', () => {
+            option.classList.toggle('show');
+        });
     </script>

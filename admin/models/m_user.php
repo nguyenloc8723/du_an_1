@@ -15,4 +15,10 @@ class m_user extends database
     $this->setQuery($sql);
     return $this->execute(array($ho_ten,$ten_dang_nhap,$mat_khau,$email));
   }
+
+  public function get_all_user() {
+    $sql = "SELECT * FROM khach_hang";
+    $this->setQuery($sql);
+    return $this->loadAllRows();
+  }
 }

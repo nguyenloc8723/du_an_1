@@ -1,4 +1,9 @@
 <main>
+    <?php if (isset($_GET['msg'])) { ?>
+        <div class="err_msg" style="text-align: center; background-color: rgba(255, 153, 154, 0.8); padding: 2rem 0; margin-bottom: 2rem; color: #fff; border-radius: 10px;">
+            <h2><?= $_GET['msg'] ?></h2>
+        </div>
+    <?php } ?>
     <div class="noidung">
         <table border="1">
             <tr>

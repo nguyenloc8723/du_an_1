@@ -7,4 +7,6 @@
     <link rel="stylesheet" href="public/asss/all.css">
     <link rel="stylesheet" href="public/spct.css">
     <link rel="stylesheet" href="public/sp.css">
+    <link rel="stylesheet" href="public/profile.css">
+    
 </head>

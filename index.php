@@ -16,6 +16,11 @@ if (isset($_GET['act'])) {
       include("controllers/c_san_pham_ct.php");
       $c_san_pham_ct = new c_san_pham_ct();
       $c_san_pham_ct->index();
+      break;
+
+    case 'binh-luan':
+      include("controllers/c_san_pham_ct.php");
+      $c_san_pham_ct = new c_san_pham_ct();
       $c_san_pham_ct->add_binh_luan();
       break;
 
@@ -30,7 +35,23 @@ if (isset($_GET['act'])) {
       $c_hh_danh_muc = new c_hh_danh_muc();
       $c_hh_danh_muc->hh_danh_muc();
       break;
-      
+
+    case 'profile':
+      include("controllers/c_user_profile.php");
+      $c_user_profile = new c_user_profile();
+      $c_user_profile->index();
+      break;
+
+    case 'edit-profile':
+      include("controllers/c_user_profile.php");
+      $c_user_profile = new c_user_profile();
+      $c_user_profile->edit_profile();
+      break;
+
+    case 'change-password':
+      echo 'Ko cho đổi mật khẩu đâu';
+      break;
+
     default:
       include("controllers/c_hang_hoa.php");
       $c_hang_hoa = new c_hang_hoa();

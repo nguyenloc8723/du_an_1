@@ -38,6 +38,10 @@
                 </tr>
             <?php } ?>
         </table>
-
+            <!-- <?php
+            foreach($m_khach_hangs as $key => $value){
+                print_r($value);
+            }
+            ?> -->
     </div>
 </main>

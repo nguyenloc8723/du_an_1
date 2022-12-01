@@ -47,8 +47,23 @@ class c_user
       $email = $_POST['email'];
       $username = $_POST['username'];
       $pass = $_POST['password'];
-      $this->add_user($name, $username, $pass, $email);
-      header("location:login.php?Đăng-kí-thành-công!");
+
+      $m_user = new m_user();
+      $check_users = $m_user->get_all_user();
+      foreach($check_users as $key => $value){
+        if($value->email == $email){
+          $_SESSION['err_email'] = 'Email đã tồn tại !';
+        }
+        if($value->ten_dang_nhap == $username) {
+          $_SESSION['err_username'] = 'Tài khoản này đã tồn tại!';
+        }
+      }
+      header("location:register.php");
+      if(!isset( $_SESSION['err_email']) && !isset($_SESSION['err_username'])){
+        $this->add_user($name, $username, $pass, $email);
+        header("location:login.php?msg=Đăng kí thành công!");
+      }
+      
     }
   }
   public function add_user($name, $username, $pass, $email)

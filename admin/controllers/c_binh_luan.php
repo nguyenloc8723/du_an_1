@@ -43,7 +43,7 @@ class c_binh_luan
         $id_bl = $_GET['id_bl'];
         $m_binh_luan = new m_binh_luan();
         $xoa_bls = $m_binh_luan->xoa_bl();
-        $msg = "thêm sp thành công ";
+        $msg = "Xóa bình luận thành công ";
         header("location:?act=show-comments&msg=$msg ");
         exit;
     }

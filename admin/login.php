@@ -14,6 +14,11 @@
 
 <body>
   <main>
+    <?php if(isset($_GET['msg'])){?>
+      <script>
+        alert('<?= $_GET['msg']?>');
+      </script>
+    <?php }?>
     <div class="login-form-container">
       <form action="action_login.php" method="POST">
         <div class="login-head">

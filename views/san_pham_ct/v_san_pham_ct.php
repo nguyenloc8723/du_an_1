@@ -23,8 +23,8 @@ if (isset($_SESSION['users'])) {
             <div class="danhgiact1">
                 <div class="saoct"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <div class="sodanhgiact"> 2 Đánh Giá</div>
-                <div class="soluotban">9 Đã Bán</div>
+                <div class="sodanhgiact"> <?= count($binh_luans)?> Đánh Giá</div>
+                <div class="soluotban">Đã Bán <?= $value->da_ban?></div>
 
             </div>
             <div class="giatienct">
@@ -109,9 +109,10 @@ if (isset($_SESSION['users'])) {
     <?php } ?>
     <?php if (isset($_SESSION['users'])) { ?>
         <div class="content_comment" style=" margin: 30px 0;">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="?act=binh-luan" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_kh" id="" value="<?= $data_user[0]['id_kh'] ?>">
                 <input type="hidden" name="id_hh" id="" value="<?= $_GET['id_hh'] ?>">
+                <input type="hidden" name="id_loai" value="<?= $_GET['id_loai']?>">
                 <input type="file" name="img">
                 <?php if (isset($_SESSION['err_img'])) { ?>
                     <span style="color: #D41830;"><?= $_SESSION['err_img'] ?></span>
@@ -126,10 +127,10 @@ if (isset($_SESSION['users'])) {
             </form>
         </div>
     <?php } ?>
-    <?php
-    unset($_SESSION['err_img']);
+    <!-- <?php 
     unset($_SESSION['err_noidung']);
-    ?>
+    unset($_SESSION['err_img']);
+    ?> -->
     <?php if (!isset($_SESSION['users'])) { ?>
         <div style="margin: 2rem; text-align: center; color: #D41830;">
             <h2>Vui lòng đăng nhập để bình luận!</h2>

@@ -3,17 +3,18 @@ session_start();
 if (isset($_SESSION['users'])) {
     $data_user = json_decode(json_encode($_SESSION['users']), true);
 }
+
 ?>
 <header>
     <div class="top">
         <div class="logo"><img src="public/images/logo.png" alt="" class="logo1"></div>
-       
+
         <div class="timkiem">
             <form action="../../du_an_1/index.php?act=search" method="post">
-                <input type="search" placeholder="Tìm kiếm ......." class="search" required name="data" value="<?= isset($_POST['data']) ? $_POST['data'] : ''?>">
+                <input type="search" placeholder="Tìm kiếm ......." class="search" required name="data" value="<?= isset($_POST['data']) ? $_POST['data'] : '' ?>">
                 <button class="nuttk" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
-            <?php header('Cache-Control: no cache');?>
+            <?php header('Cache-Control: no cache'); ?>
         </div>
         <div class="login">
             <div class="giohang"><i class="fa-solid fa-cart-shopping"></i><a href=""> Giỏ hàng</a></div>
@@ -21,12 +22,26 @@ if (isset($_SESSION['users'])) {
             <?php
             if (isset($_SESSION['users'])) {
             ?>
-                <div class="dangki1">
-                    <i class="fa-solid fa-user"></i> <a href="#"><?= $data_user[0]['ho_ten'] ?></a>
+                <div class="action-user">
+                    <div class="dangki1" id="info">
+                        <div class="img-user">
+                            <img src="public/images/<?= $data_user[0]['hinh'] ?>" alt="">
+                        </div>
+                        <a href="#"><?= $data_user[0]['ten_dang_nhap'] ?></a>
+                        <ul class="option">
+                            <li><a href="?act=profile&id=<?= $data_user[0]['id_kh'] ?>"><i class="fa-solid fa-user"></i> Trang cá nhân</a></li>
+                            <li><a href="?act=change-password"><i class="fa-sharp fa-solid fa-key"></i> Đổi mật khẩu</a></li>
+                            <?php if ($data_user[0]['vai_tro'] == 1) { ?>
+                                <li><a href="../../du_an_1/admin/dashboad.php"><i class="fa-solid fa-screwdriver-wrench"></i> Trang quản trị</a></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+
+                    <div class="dangki1">
+                        <i class="fa-solid fa-right-from-bracket" style="transform: rotate(-180deg);"></i> <a onclick="return confirm('Bạn có muốn đăng xuất ko?')" href="../../du_an_1/admin/logout.php?func=exit">Log-out</a>
+                    </div>
                 </div>
-                <div class="dangki1">
-                    <i class="fa-solid fa-right-from-bracket" style="transform: rotate(-180deg);"></i> <a onclick="return confirm('Bạn có muốn đăng xuất ko?')" href="../../du_an_1/admin/logout.php?func=exit">Log-out</a>
-                </div>
+
 
             <?php
             } else {
@@ -35,7 +50,7 @@ if (isset($_SESSION['users'])) {
                     <i class="fa-solid fa-lock"></i> <a href="../../du_an_1/admin/login.php"> Đăng Nhập</a>
                 </div>
                 <div class="dangki1">
-                    <i class="fa-solid fa-pen-to-square"></i><a href="../../du_an_1/admin/register.php"> Đăng Kí</a>
+                    <i class="fa-solid fa-pen-to-square"></i> <a href="../../du_an_1/admin/register.php"> Đăng Kí</a>
                 </div>
             <?php } ?>
         </div>

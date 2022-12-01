@@ -7,6 +7,7 @@
 /*_________________________*/
 body{
     width: 100%;
+    overflow-x: hidden;
 }
 header {
     width: 100%;
@@ -20,7 +21,7 @@ header {
     height: 100px;
     background: #fafafa;
     margin: 0;
-
+    margin-bottom: 1rem;
 }
 
 .logo {
@@ -56,6 +57,7 @@ header {
 
 .login {
     width: 20%;
+    
 }
 
 .giohang {
@@ -76,6 +78,53 @@ header {
     float: left;
     color: #d41830;
     padding: 0 5%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+   
+}
+.dangki1 .option {
+    background-color: #fff;
+    width: 150px;
+    position: absolute;
+    top: 2.7rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.4);
+    transform: translateX(350px);
+    transition: all 0.5s;
+}
+.option.show {
+    transform: translateX(0px);
+}
+/* .dangki1:hover>ul.option {
+    
+
+} */
+.option li a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    text-align: left;
+    padding: 0.5rem 0.3rem;
+}
+.option li a:hover {
+    color: #FF6651;
+    transition: color 0.5s;
+}
+.action-user {
+    display: flex;
+    align-items: center;
+}
+.dangki1 .img-user {
+    margin-right: 0.5rem;
+}
+.dangki1 img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 .dangki1 a{
     color: #000;

@@ -1,4 +1,4 @@
-<main>
+<main class="main">
   <div class="danhmuc">
     <h3 class="danhmuc1"> <i class="fa-solid fa-list"></i> Tất cả danh mục</h3>
     <div class="spto">Máy tính & Laptop</div>
