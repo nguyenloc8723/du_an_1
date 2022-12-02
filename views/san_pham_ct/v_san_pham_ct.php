@@ -158,13 +158,13 @@ if (isset($_SESSION['users'])) {
 </div>
 <div class="sanpham" style="width: 60%;padding:3% 20%; padding-right: 20%; background: #FAFAFA;">
     <?php foreach ($add_sp_cung_loai as $key => $value) { ?>
-        <a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">
+        <a href="?act=chi-tiet-sp&id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">
             <div class="sanphamct">
                 <img src="public/images/<?php echo $value->hinh; ?>" alt="" class="anhsanpham">
-                <div class="tensp"><a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>"><?php echo $value->ten_hh; ?></a></div>
+                <div class="tensp"><a href="?act=chi-tiet-sp&id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>"><?php echo $value->ten_hh; ?></a></div>
                 <div class="giatien">₫<?php echo number_format($value->don_gia) ?></div>
                 <div class="luotxem"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> Đã bán <?php echo $value->da_ban; ?>k</div>
-                <div class="chitietsp"><a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">Xem chi tiết</a></div>
+                <div class="chitietsp"><a href="?act=chi-tiet-sp&id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">Xem chi tiết</a></div>
             </div>
         </a>
     <?php } ?>

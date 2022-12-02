@@ -492,13 +492,13 @@ li {
   padding-left: 20px;
   font-size: 15px;
 }
-.sapxepcon {
+/* .sapxepcon {
   color: #000;
   padding: 10px 20px;
-
   border: 1px solid #c2c2c2;
   margin: 0px 10px;
-}
+  font-size: 100px;
+} */
 .chuyentrang {
   width: 100%;
   display: flex;
@@ -518,7 +518,13 @@ li {
     background-color: #EFEFEF;
     padding: 0.5rem 0.7rem;
     color: #ee4d2d;
+    transition: all 0.5s;
 }
+.panigation ul li a:hover {
+  background-color: #ee4d2d;
+  color: #fff;
+}
+
 .panigation ul li a.active {
     background-color: #ee4d2d;
     color: #fff;

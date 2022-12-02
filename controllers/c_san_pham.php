@@ -1,7 +1,8 @@
 <?php 
+    include ("models/m_san_pham.php");
+    include ("models/m_loai.php");
 class c_san_pham{
     public function index(){
-        include ("models/m_san_pham.php");
         $m_san_pham = new m_san_pham();
         //lấy tất cả sản phẩm từ db
         $all_san_pham = $m_san_pham->doc_all_san_pham();
@@ -17,9 +18,6 @@ class c_san_pham{
         $san_phams = $m_san_pham->doc_san_pham($startIndex,$products);
         
 
-
-
-        include ("models/m_loai.php");
         $m_loai = new m_loai();
         $loais = $m_loai->doc_loai();
 
@@ -29,8 +27,32 @@ class c_san_pham{
         include ("templates/layout.php");
     }
 
+    public function hot_products(){
+        $m_loai = new m_loai();
+        $loais = $m_loai->doc_loai();
 
+        $m_san_pham = new m_san_pham();
+        $hot_products = $m_san_pham->get_hot_products();
+
+        $view = "views/san_pham/v_san_pham_ban_chay.php";
+        include ("templates/layout.php");
+    }
+
+    public function new_products(){
+        $m_loai = new m_loai();
+        $loais = $m_loai->doc_loai();
+
+        $m_san_pham = new m_san_pham();
+        $new_products = $m_san_pham->get_new_products();
+
+        $view = "views/san_pham/v_san_pham_moi_nhat.php";
+        include ("templates/layout.php");
+    }
+
+    public function popular_products() {
+        
+    }
 } 
- 
+
 
 ?>

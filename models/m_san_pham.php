@@ -17,4 +17,25 @@ class m_san_pham extends database
       // lấy dữ liệu nhiều dùng 
       return $this->loadAllRows();
    }
+
+   public function get_new_products()
+   { 
+      $sql = "SELECT * FROM hang_hoa ORDER BY ngay_nhap DESC LIMIT 0,8";
+      $this->setQuery($sql);
+      return $this->loadAllRows();
+   }
+
+   public function get_hot_products()
+   {
+      $sql = "SELECT * FROM hang_hoa WHERE da_ban > 100";
+      $this->setQuery($sql);
+      return $this->loadAllRows();
+   }
+
+   public function get_popular_product()
+   {
+
+      return $this->loadAllRows();
+
+   }
 }

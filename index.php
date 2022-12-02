@@ -12,6 +12,26 @@ if (isset($_GET['act'])) {
       $c_san_pham->index();
       break;
 
+      // case 'lien-he' :
+
+      //   break;
+    
+    case 'popular-products':
+      echo "trang sản phẩm phổ biến";
+      break;
+
+    case 'new-products':
+      include("controllers/c_san_pham.php");
+      $c_san_pham = new c_san_pham();
+      $c_san_pham->new_products();
+      break;
+
+    case 'hot-products':
+      include("controllers/c_san_pham.php");
+      $c_san_pham = new c_san_pham();
+      $c_san_pham->hot_products();
+      break;
+
     case 'chi-tiet-sp':
       include("controllers/c_san_pham_ct.php");
       $c_san_pham_ct = new c_san_pham_ct();
@@ -25,11 +45,11 @@ if (isset($_GET['act'])) {
       break;
     case 'cart':
       include("controllers/c_cart.php");
-    
+
       $c_cart = new c_cart();
       $c_cart->index();
       break;
-      
+
     case 'search':
       include("controllers/c_tim_hh.php");
       $c_search_hh = new c_tim_hh();
@@ -55,7 +75,9 @@ if (isset($_GET['act'])) {
       break;
 
     case 'change-password':
-      echo 'Ko cho đổi mật khẩu đâu';
+      include("controllers/c_user_profile.php");
+      $c_user_profile = new c_user_profile();
+      $c_user_profile->change_pass_user();
       break;
 
     default:
