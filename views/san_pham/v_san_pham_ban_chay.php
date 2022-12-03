@@ -16,13 +16,13 @@
     <div class="conntenr">
         <div class="sapxep">
             <span class="sapxep1">Sắp xếp theo</span>
-            <div class="sapxepcon"><a style="background-color: #ff6651; color: #fff;" href="?act=san-pham">Tất cả</a></div>
+            <div class="sapxepcon"><a href="?act=san-pham">Tất cả</a></div>
             <div class="sapxepcon"><a href="?act=popular-products">Phổ biến</a></div>
-            <div class="sapxepcon"><a href="?act=new-products">Mới nhất</a></div>
-            <div class="sapxepcon"><a href="?act=hot-products">Bán chạy</a></div>
+            <div class="sapxepcon" ><a href="?act=new-products">Mới nhất</a></div>
+            <div class="sapxepcon" ><a style="background-color: #ff6651; color: #fff;" href="?act=hot-products">Bán chạy</a></div>
         </div>
         <div class="sanpham">
-            <?php foreach ($san_phams as $key => $value) { ?>
+            <?php foreach ( $hot_products as $key => $value) { ?>
 
                 <a href="?act=chi-tiet-sp&page=Chi tiết sản phẩm&id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">
                     <div class="sanphamct">
@@ -36,7 +36,7 @@
             <?php } ?>
 
         </div>
-        <div class="chuyentrang">
+        <!-- <div class="chuyentrang">
             <div class="panigation">
                 <ul>
                     <?php if ($page == 1) { ?>
@@ -60,7 +60,7 @@
                     <?php }?>
                 </ul>
             </div>
-        </div>
+        </div> -->
     </div>
 
 </main>

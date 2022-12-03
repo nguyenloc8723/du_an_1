@@ -55,7 +55,6 @@ if (isset($_GET['act'])) {
       $xoa_sp->xoa_sp();
       break;
 
-
       //quản lí data loại sản phẩm
     case 'add-category':
       include("controllers/c_loai.php");

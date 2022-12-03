@@ -49,6 +49,9 @@ class c_san_pham_ct
                 move_uploaded_file($img['tmp_name'], './public/images/' . $img['name']);
             }
             header("location:?act=chi-tiet-sp&page=Chi tiết sản phẩm&id_hh=$id_hh&id_loai=$id_loai");
+            // print_r($_SESSION);
+            // header("location:?act=binh-luan");
         }
+
     }
 }

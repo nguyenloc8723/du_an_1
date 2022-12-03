@@ -16,10 +16,10 @@ class m_user_profile extends database
     return $this->execute(array($ho_ten, $email, $address, $phone_number, $hinh, $id_kh));
   }
 
-  public function change_pass($mat_khau)
+  public function change_pass($mat_khau,$id_kh)
   {
-    $sql = "UPDATE khach_hang SET mat_khau = ?";
+    $sql = "UPDATE khach_hang SET mat_khau = ? WHERE id_kh = ?";
     $this->setQuery($sql);
-    return $this->execute(array($mat_khau));
+    return $this->execute(array($mat_khau, $id_kh));
   }
 }

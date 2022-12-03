@@ -1,9 +1,11 @@
 <?php
+include("models/m_user_profile.php");
 class c_user_profile
 {
+
   public function index()
   {
-    include("models/m_user_profile.php");
+
     $m_user_profile = new m_user_profile();
     $user_info = $m_user_profile->read_user_info($_GET['id']);
 
@@ -13,7 +15,7 @@ class c_user_profile
 
   public function edit_profile()
   {
-    include("models/m_user_profile.php");
+    // include("models/m_user_profile.php");
     $m_user_profile = new m_user_profile();
     $user_info = $m_user_profile->read_user_info($_GET['id']);
 
@@ -44,7 +46,7 @@ class c_user_profile
           $err['err_img'] = 'Ảnh không đúng định dạng';
         }
       }
-      if(!$err){
+      if (!$err) {
         $m_user_profile = new m_user_profile();
         $m_user_profile->edit_user_info($ho_ten, $email, $address, $phone_number, $img_name, $id_kh);
         move_uploaded_file($hinh['tmp_name'], './public/images/' . $img_name);
@@ -54,6 +56,48 @@ class c_user_profile
     }
 
     $view = "views/profile/v_edit_profile.php";
+    include("templates/layout.php");
+  }
+
+  public function change_pass_user()
+  {
+    $m_user_profile = new m_user_profile();
+    $user_info = $m_user_profile->read_user_info($_GET['id']);
+
+    if(isset($_POST['change'])){
+      $id_kh = $_GET['id'];
+      $current_pass = $_POST['current-pass'];
+      $new_pass = $_POST['new-pass'];
+      $confirm_pass = $_POST['confirm-pass'];
+
+
+      //validate change password
+      $err = [];
+      if($current_pass != $user_info->mat_khau){
+        $err['err-cur-pass'] = 'Sai mật khẩu!';
+      }
+      if($current_pass == ""){
+        $err['err-cur-pass'] = 'Không được để trống!';
+      }
+      if($new_pass == ""){
+        $err['err-new-pass'] = 'Không được để trống!';
+      }
+      if($confirm_pass == ""){
+        $err['err-confirm-pass'] = 'Không được để trống!';
+      }
+      if($confirm_pass != $new_pass){
+        $err['err-confirm-pass'] = 'Mật khẩu và Mật khẩu xác nhận không giống nhau!';
+      }
+      
+      if(!$err){
+        $m_user_profile = new m_user_profile();
+        $m_user_profile->change_pass($new_pass,$id_kh);
+        $msg = 'Đổi mật khẩu thành công!';
+        header("location:?act=profile&id=$id_kh&msg=$msg");
+      }
+    }
+
+    $view = "views/profile/v_change_pass.php";
     include("templates/layout.php");
   }
 }

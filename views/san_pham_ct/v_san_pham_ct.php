@@ -23,13 +23,13 @@ if (isset($_SESSION['users'])) {
             <div class="danhgiact1">
                 <div class="saoct"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <div class="sodanhgiact"> <?= count($binh_luans)?> Đánh Giá</div>
-                <div class="soluotban">Đã Bán <?= $value->da_ban?></div>
+                <div class="sodanhgiact"> <?= count($binh_luans) ?> Đánh Giá</div>
+                <div class="soluotban">Đã Bán <?= $value->da_ban ?></div>
 
             </div>
             <div class="giatienct">
                 <div class="giagocct">Giá ban đầu:<?php echo ($value->giam_gia + $value->don_gia) ?>$</div>
-                <div class="giabanct">Giá: <strong id="money"><?php echo number_format ($value->don_gia) ?></strong>$</div>
+                <div class="giabanct">Giá: <strong id="money"><?php echo number_format($value->don_gia) ?></strong>$</div>
             </div>
             <div class="baohiemct">
                 <div class="baohien1">Bảo Hiểm</div>
@@ -126,7 +126,7 @@ if (isset($_SESSION['users'])) {
             <form action="?act=binh-luan" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_kh" id="" value="<?= $data_user[0]['id_kh'] ?>">
                 <input type="hidden" name="id_hh" id="" value="<?= $_GET['id_hh'] ?>">
-                <input type="hidden" name="id_loai" value="<?= $_GET['id_loai']?>">
+                <input type="hidden" name="id_loai" value="<?= $_GET['id_loai'] ?>">
                 <input type="file" name="img">
                 <?php if (isset($_SESSION['err_img'])) { ?>
                     <span style="color: #D41830;"><?= $_SESSION['err_img'] ?></span>
@@ -146,10 +146,12 @@ if (isset($_SESSION['users'])) {
             </form>
         </div>
     <?php } ?>
+
     <!-- <?php 
     unset($_SESSION['err_noidung']);
     unset($_SESSION['err_img']);
     ?> -->
+
     <?php if (!isset($_SESSION['users'])) { ?>
         <div style="margin: 2rem; text-align: center; color: #D41830;">
             <h2>Vui lòng đăng nhập để bình luận!</h2>
@@ -166,13 +168,13 @@ if (isset($_SESSION['users'])) {
 </div>
 <div class="sanpham" style="width: 60%;padding:3% 20%; padding-right: 20%; background: #FAFAFA;">
     <?php foreach ($add_sp_cung_loai as $key => $value) { ?>
-        <a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">
+        <a href="?act=chi-tiet-sp&id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">
             <div class="sanphamct">
                 <img src="public/images/<?php echo $value->hinh; ?>" alt="" class="anhsanpham">
-                <div class="tensp"><a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>"><?php echo $value->ten_hh; ?></a></div>
+                <div class="tensp"><a href="?act=chi-tiet-sp&id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>"><?php echo $value->ten_hh; ?></a></div>
                 <div class="giatien">₫<?php echo number_format($value->don_gia) ?></div>
                 <div class="luotxem"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> Đã bán <?php echo $value->da_ban; ?>k</div>
-                <div class="chitietsp"><a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">Xem chi tiết</a></div>
+                <div class="chitietsp"><a href="?act=chi-tiet-sp&id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">Xem chi tiết</a></div>
             </div>
         </a>
     <?php } ?>

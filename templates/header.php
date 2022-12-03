@@ -30,7 +30,7 @@ if (isset($_SESSION['users'])) {
                         <a href="#"><?= $data_user[0]['ten_dang_nhap'] ?></a>
                         <ul class="option">
                             <li><a href="?act=profile&id=<?= $data_user[0]['id_kh'] ?>"><i class="fa-solid fa-user"></i> Trang cá nhân</a></li>
-                            <li><a href="?act=change-password"><i class="fa-sharp fa-solid fa-key"></i> Đổi mật khẩu</a></li>
+                            <li><a href="?act=change-password&id=<?= $data_user[0]['id_kh']?>"><i class="fa-sharp fa-solid fa-key"></i> Đổi mật khẩu</a></li>
                             <?php if ($data_user[0]['vai_tro'] == 1) { ?>
                                 <li><a href="../../du_an_1/admin/dashboad.php"><i class="fa-solid fa-screwdriver-wrench"></i> Trang quản trị</a></li>
                             <?php } ?>
