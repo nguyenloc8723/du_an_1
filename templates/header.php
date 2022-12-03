@@ -17,7 +17,7 @@ if (isset($_SESSION['users'])) {
             <?php header('Cache-Control: no cache'); ?>
         </div>
         <div class="login">
-            <div class="giohang"><i class="fa-solid fa-cart-shopping"></i><a href=""> Giỏ hàng</a></div>
+            <div class="giohang"><i class="fa-solid fa-cart-shopping"></i><a href="?act=cart"> Giỏ hàng</a></div>
 
             <?php
             if (isset($_SESSION['users'])) {

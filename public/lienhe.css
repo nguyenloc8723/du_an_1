@@ -1,0 +1,99 @@
+/*lienhe.css */
+aside {
+    width: 100%;
+    background: #fafafa;
+
+}
+
+.diadiem {
+    display: flex;
+    width: 80%;
+    margin: 5% 10%;
+    background: #ffffff;
+}
+
+.diadiem1 {
+    width: 100%;
+    display: flex;
+    padding-bottom: 3%;
+
+}
+
+.diadiem11 {
+    width: 30%;
+
+    padding-bottom: 3%;
+
+}
+
+.diadiem2 {
+    width: 70%;
+
+    padding-bottom: 3%;
+
+}
+
+.dd1 {
+    width: 15%;
+    height: 60px;
+    font-size: 40px;
+    color: #00204a;
+}
+
+.dd12 {
+    width: 85%;
+}
+
+.dd2 {
+    font-weight: 700;
+    font-size: 18px;
+    color: #00204a;
+    padding: 1% 4%;
+}
+
+.dd3 {
+    font-size: 14px;
+    color: #888;
+    padding-right: 10%;
+    padding: 1% 4%;
+}
+
+.name {
+    float: left;
+    width: 40%;
+    margin: 0% 5%;
+}
+
+.form-control {
+    border: 1px solid #6c757d;
+
+    width: 100%;
+    padding: 2% 3%;
+    margin-bottom: 7%;
+
+
+}
+
+.form-control1 {
+    border: 1px solid #6c757d;
+
+    width: 100%;
+    padding: 2% 3%;
+    margin-bottom: 5%;
+
+}
+
+.name1 {
+    width: 88%;
+    margin: 0% 5%;
+}
+
+.name31 {
+    width: 30%;
+    padding: 2% 0;
+    border-radius: 50px;
+    background: #d41830;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0% 5%;
+}

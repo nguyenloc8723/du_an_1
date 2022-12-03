@@ -28,8 +28,8 @@ if (isset($_SESSION['users'])) {
 
             </div>
             <div class="giatienct">
-                <div class="giagocct">₫ <?php echo number_format($value->giam_gia) ?></div>
-                <div class="giabanct">₫<?php echo number_format($value->don_gia) ?></div>
+                <div class="giagocct">Giá ban đầu:<?php echo ($value->giam_gia + $value->don_gia) ?>$</div>
+                <div class="giabanct">Giá: <strong id="money"><?php echo number_format ($value->don_gia) ?></strong>$</div>
             </div>
             <div class="baohiemct">
                 <div class="baohien1">Bảo Hiểm</div>
@@ -42,17 +42,31 @@ if (isset($_SESSION['users'])) {
                 </div>
             </div>
             <div class="soluongct">
-                <div class="soluongct1">Số Lượng</div>
-                <div class="soluongct2">
-                    <button class="trusl"><i class="fa-solid fa-minus"></i></button>
-                    <button class="sosl">1</button>
-                    <button class="trusl"><i class="fa-solid fa-plus"></i></button>
+                <div class="soluongct1">Số Lượng :</div>
+                <div class="soluongct2" style="display: flex;
+    width: 100%;
+    height: 30px;">
+                    <span onclick="mathPrice(<?= $value->don_gia ?>,'minus',<?= $value->id_hh ?>,'money')" style=" cursor:pointer;padding:0 5px;border:1px solid ;
+                   ">-</span>
+                    <input style="text-align: center;" type="number" id="<?= $value->id_hh ?>" value="1" name="quantity" min="1" max="100" readonly />
+                    <span onclick="mathPrice(<?= $value->don_gia ?>,'plus',<?= $value->id_hh ?>,'money')" style=" cursor:pointer;border:1px solid ;padding:0 5px;">+</span>
                 </div>
             </div>
-            <div class="muact">
-                <div class="muact1"><i class="fa-solid fa-cart-shopping"></i> Thêm Vào Giỏ Hàng</div>
-                <div class="muact2">Mua Ngay
-                </div>
+
+            <div class="muact" style="text-align: center;">
+                <form action="?act=cart" method="post">
+                    <input type="hidden" value="<?= $value->ten_hh ?>" name="name">
+                    <input type="hidden" value="<?= $value->don_gia ?>" name="gia">
+                    <input type="hidden" value="<?= $value->hinh ?>" name="img">
+                    <input type="hidden" value="<?= $value->id_hh ?>" name="id">
+                    <button type="submit" name="btn">
+                        <a href="?act=cart">
+                            <div class="muact1"><i class="fa-solid fa-cart-shopping"></i> Thêm Vào Giỏ Hàng</div>
+                        </a>
+                    </button>
+                </form>
+
+
             </div>
             <div class="chinhsachct">
                 <div class="chinhsachct1"><i class="fa-solid fa-rotate-left iconct"></i> 7 ngày miễn phí trả hàng
@@ -124,6 +138,11 @@ if (isset($_SESSION['users'])) {
                     <span style="color:#D41830;"><?= $_SESSION['err_noidung'] ?></span>
                 <?php } ?>
                 <button type="submit" name='cmt' style="display: block; width: 120px; height: 40px; margin-top: 15px;background-color: #D41830; color: #fff; font-size: 18px; border: none;">Gửi</button>
+            <!-- <form action="" method="post">
+                <input type="hidden" name="id_kh" id="" value="<?= $data_user[0]['id_kh'] ?>">
+                <input type="hidden" name="id_hh" id="" value="<?= $_GET['id_hh'] ?>">
+                <textarea rows="5" style="width: 50%; font-size: 18px; outline: none; padding: 10px; resize: none;" placeholder="Enter your comments here..." name="noi_dung"></textarea> -->
+                
             </form>
         </div>
     <?php } ?>
@@ -147,15 +166,16 @@ if (isset($_SESSION['users'])) {
 </div>
 <div class="sanpham" style="width: 60%;padding:3% 20%; padding-right: 20%; background: #FAFAFA;">
     <?php foreach ($add_sp_cung_loai as $key => $value) { ?>
-        <a href="?act=chi-tiet-sp&id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">
+        <a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">
             <div class="sanphamct">
                 <img src="public/images/<?php echo $value->hinh; ?>" alt="" class="anhsanpham">
-                <div class="tensp"><a href="?act=chi-tiet-sp&id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>"><?php echo $value->ten_hh; ?></a></div>
+                <div class="tensp"><a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>"><?php echo $value->ten_hh; ?></a></div>
                 <div class="giatien">₫<?php echo number_format($value->don_gia) ?></div>
                 <div class="luotxem"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> Đã bán <?php echo $value->da_ban; ?>k</div>
-                <div class="chitietsp"><a href="?act=chi-tiet-sp&id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">Xem chi tiết</a></div>
+                <div class="chitietsp"><a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">Xem chi tiết</a></div>
             </div>
         </a>
     <?php } ?>
 
 </div>
+<script src="./public/sp_ct.js"></script>

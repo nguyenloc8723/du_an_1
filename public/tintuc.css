@@ -1,0 +1,40 @@
+.tintuc{
+    width: 80%;
+     padding: 0% 10%;
+     background: #fafafa;
+}
+.tintucall{
+    width: 100%;
+    display: flex;
+    background: #ffffff;
+    color: #000;
+    
+    border-bottom: 1px solid #c2c2c2;
+}
+.tintucanh{
+    width: 30%;
+}
+.anhtt{width: 80%;
+
+margin: 10%;}
+.tintucnd{
+    width: 70% ;
+    padding: 3% 5%;
+    
+}
+.noidungtt{
+    text-align: justify;
+    padding: 3% 0%;
+    line-height: 1.5;
+}
+.inputct{
+    text-align: right;
+    padding: 2% 0%;
+}
+.noidungtt{
+ 
+}
+.h2tt{
+    font-size: 20px;
+}
+ 

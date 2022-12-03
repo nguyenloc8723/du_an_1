@@ -49,6 +49,10 @@
     </footer>
     <script>
         
+                  if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+}
+        console.log(img);
         var arrImg = [
             "public/images/mau-banner-quang-cao-khuyen-mai.jpg",
             "public/images/Banner2.jpg",
@@ -82,4 +86,14 @@
         info.addEventListener('click', () => {
             option.classList.toggle('show');
         });
+    </script>
+    <script>
+        var editor = CKEDITOR.replace('mo_ta', {
+            filebrowserBrowseUrl: 'ckfinder/ckfinder.html',
+            filebrowserImageBrowseUrl: 'ckfinder/ckfinder.html?type=Images',
+            filebrowserUploadUrl: 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+            filebrowserImageUploadUrl: 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+            height: 500,
+        })
+        CKFinder.setupCKEditor(editor);
     </script>

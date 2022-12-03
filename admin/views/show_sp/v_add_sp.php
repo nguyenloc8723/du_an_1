@@ -59,8 +59,8 @@
     </div>
 
 
-    <div class="box" style="margin-top: 20px;"> <label for="">Mô tả hàng hóa</label> <br>
-        <textarea name="mo_ta" cols="100" rows="10" style="margin-left:50px; margin-top: 10px;padding: 10px;"></textarea>
+    <div class="box22" style="margin-top: 20px;"> <label for="">Mô tả hàng hóa</label> <br>
+        <textarea name="mo_ta" id="mo_ta" cols="100" rows="10" style="margin-left:50px; margin-top: 10px;padding: 10px; width: 100%;"></textarea>
     </div>
 
     <button type="submit" name="btnluu">Thêm mới </button>
