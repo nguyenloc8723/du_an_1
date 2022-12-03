@@ -39,7 +39,7 @@
           <form action="" method="post">
             <div class="form-group">
               <label for=""><i class="fa-solid fa-key"></i> Mật khẩu hiện tại: </label>
-              <input type="password" name="current-pass" value="<?= isset($_POST['current-pass']) ? $_POST['current-pass'] : '' ?>">
+              <input type="password" name="current-pass" value="<?= isset($_POST['current-pass']) ? $_POST['current-pass'] : '' ?>" placeholder="Mật khẩu hiện tại...">
             </div>
             <?php if(isset($err['err-cur-pass'])) {?>
                   <div>
@@ -48,7 +48,7 @@
             <?php }?>
             <div class="form-group">
               <label for=""><i class="fa-solid fa-lock"></i> Mật khẩu mới: </label>
-              <input type="password" name="new-pass" value="<?= isset($_POST['new-pass']) ? $_POST['new-pass'] : '' ?>">
+              <input type="password" name="new-pass" value="<?= isset($_POST['new-pass']) ? $_POST['new-pass'] : '' ?>" placeholder="Mật khẩu mới...">
             </div>
             <?php if(isset($err['err-new-pass'])) {?>
                   <div>
@@ -57,7 +57,7 @@
             <?php }?>
             <div class="form-group">
               <label for=""><i class="fa-solid fa-file-signature"></i> Xác nhận mật khẩu: </label>
-              <input type="password" name="confirm-pass">
+              <input type="password" name="confirm-pass" placeholder="Xác nhận mật khẩu...">
             </div>
             <?php if(isset($err['err-confirm-pass'])) {?>
                   <div>
