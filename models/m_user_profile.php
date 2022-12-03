@@ -22,4 +22,8 @@ class m_user_profile extends database
     $this->setQuery($sql);
     return $this->execute(array($mat_khau, $id_kh));
   }
+
+  public function forgot_pass(){
+    
+  }
 }
