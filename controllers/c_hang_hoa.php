@@ -1,4 +1,5 @@
 <?php 
+session_start();
 class c_hang_hoa{
     public function index(){
         include ("models/m_hang_hoa.php");

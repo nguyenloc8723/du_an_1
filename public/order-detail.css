@@ -1,0 +1,122 @@
+.order-main {
+    width: 100%;
+
+
+}
+
+.order-header {
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.order-header p {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.oder-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-main_left {
+    width: 58%;
+}
+
+.left-top {
+    background: #F8F7F5;
+    margin-bottom: 20px;
+}
+.left-top h3{
+    padding: 20px 0 0 5%;
+    color: #202124;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 27px;
+}
+.left-top p{
+    margin-left: 5%;
+    padding-bottom: 2%;
+}
+.left-top input{
+    height: 30px;
+    border: none !important;
+    border-bottom: 1px solid #cdcdcd !important;
+    width: 90%;
+    background-color: #F8F7F5;
+    margin-left: 5%;
+    margin-bottom: 5% !important;
+}
+
+.left-bottom {
+    background: #F8F7F5;
+    margin-bottom: 30px;
+}
+.left-bottom h3{
+    padding: 20px 0 0 5%;
+    color: #202124;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 27px;
+}
+.left-bottom p{
+    margin-left: 5%;
+    padding-bottom: 2%;
+}
+.left-bottom input{
+    height: 30px;
+    border: none !important;
+    border-bottom: 1px solid #cdcdcd !important;
+    width: 90%;
+    background-color: #F8F7F5;
+    margin-left: 5%;
+    margin-bottom: 5% !important;
+}
+.check-order{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: #28A745;
+    color: #fff;
+    width: 50%;
+    border-radius: 20px;
+    height: 50px;
+    margin: 50px;
+    font-size: 15px;
+    font-weight: 700    ;
+}
+.order-main_right {
+    width: 39%;
+    border-radius: 10px;
+    height: 200px;
+    box-shadow: 0px 0px 10px 3px #cdcdcd;
+}
+.right-title{
+    text-align: center;
+    margin-top: 5%;
+    width: 100%;
+}
+.right-title hr{
+    width: 80% !important;
+    margin-left: 10%;
+}
+.right-title h3{
+    padding: 10px; 
+    color: #202124;
+    font-size: 20px;
+    font-weight: 300;
+}
+.right-main{
+    margin-top: 4%;
+    padding: 0 4%;
+}
+.right-main p{
+    margin: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}

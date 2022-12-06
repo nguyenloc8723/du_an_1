@@ -13,8 +13,8 @@
     <script src="../ckfinder/ckfinder.js"></script>
     <link rel="stylesheet" href="public/cart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-   
+    <link rel="stylesheet" href="public/order-detail.css">
+    <link rel="stylesheet" href="public/order.css">
     
 
 </head>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("models/m_user_profile.php");
 class c_user_profile
 {

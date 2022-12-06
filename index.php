@@ -15,7 +15,7 @@ if (isset($_GET['act'])) {
       // case 'lien-he' :
 
       //   break;
-    
+
     case 'popular-products':
       echo "trang sản phẩm phổ biến";
       break;
@@ -49,7 +49,11 @@ if (isset($_GET['act'])) {
       $c_cart = new c_cart();
       $c_cart->index();
       break;
-
+    case 'order':
+      include("controllers/c_order.php");
+      $c_order = new c_order();
+      $c_order->index();
+      break;
     case 'search':
       include("controllers/c_tim_hh.php");
       $c_search_hh = new c_tim_hh();
