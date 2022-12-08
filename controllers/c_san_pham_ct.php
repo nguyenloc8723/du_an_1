@@ -22,6 +22,7 @@ class c_san_pham_ct{
         if (isset($_POST['cmt'])) {
             $id_kh = $_POST['id_kh'];
             $id_hh = $_POST['id_hh'];
+            $id_loai = $_POST['id_loai'];
             $noi_dung = $_POST['noi_dung'];
             $img = $_FILES['img'];
 

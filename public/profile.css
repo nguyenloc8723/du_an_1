@@ -113,6 +113,15 @@ form .edit-btn {
   cursor: pointer;
   transition: all 0.5s;
 }
+form .forgot-pass-link {
+  margin-top: 1.5rem;
+}
+form .forgot-pass-link a {
+  color: #6A5AF9;
+}
+form .forgot-pass-link a:hover {
+  text-decoration: underline;
+}
 form .edit-btn:hover {
   background-color: #E9ECEF;
   color: #6A5AF9;

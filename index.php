@@ -43,17 +43,19 @@ if (isset($_GET['act'])) {
       $c_san_pham_ct = new c_san_pham_ct();
       $c_san_pham_ct->add_binh_luan();
       break;
+
     case 'cart':
       include("controllers/c_cart.php");
-
       $c_cart = new c_cart();
       $c_cart->index();
       break;
+
     case 'order':
       include("controllers/c_order.php");
       $c_order = new c_order();
       $c_order->index();
       break;
+
     case 'search':
       include("controllers/c_tim_hh.php");
       $c_search_hh = new c_tim_hh();
@@ -82,6 +84,12 @@ if (isset($_GET['act'])) {
       include("controllers/c_user_profile.php");
       $c_user_profile = new c_user_profile();
       $c_user_profile->change_pass_user();
+      break;
+
+    case 'forgot-password':
+      include("controllers/c_user_profile.php");
+      $c_user_profile = new c_user_profile();
+      $c_user_profile->forgot_pass_user();
       break;
 
     default:

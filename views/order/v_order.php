@@ -49,9 +49,9 @@ if(isset($_POST['total'])){
                     <hr>
                 </div>
                 <div class="right-main">
-                    <p>Tổng đơn hàng <span><?=$_SESSION['pust']?>đ</span></p>
-                    <p>Phí giao hàng <span>10000đ</span></p>
-                    <p>Tổng đơn hàng(Cả giao hàng) <span>0đ</span></p>
+                    <p>Tổng đơn hàng <span><?= number_format($_SESSION['pust']) ?>đ</span></p>
+                    <p>Phí giao hàng <span><?= number_format(10000)?>đ</span></p>
+                    <p>Tổng đơn hàng(Cả giao hàng) <span><?= number_format($_SESSION['pust'] + 10000) ?>đ</span></p>
                 </div>
             </div>
         </div>

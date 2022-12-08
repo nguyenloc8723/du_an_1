@@ -10,12 +10,12 @@
     <?php } ?>
   </div>
   <div class="conntenr">
-    <div class="sapxep">
+    <!-- <div class="sapxep">
       <span class="sapxep1">Sắp xếp theo</span>
       <div class="sapxepcon" style="background: #ee4d2d; color: #fff;">Phổ biến</div>
       <div class="sapxepcon">Mới nhất </div>
       <div class="sapxepcon">Bán chạy</div>
-    </div>
+    </div> -->
     <div class="sanpham">
     <?php if(count($search) == 0) { ?>
         <div style="text-align: center; margin-top: 100px; width: 100%; color: #EE4D2D;">

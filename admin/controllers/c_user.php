@@ -29,6 +29,7 @@ class c_user
   {
     unset($_SESSION['users']);
     unset($_SESSION['error_login']);
+    unset($_SESSION['cart']);
     header("location:../../du_an_1/index.php?Logout thành công!");
   }
   public function saveLoginSession($username, $password)
@@ -47,6 +48,7 @@ class c_user
       $email = $_POST['email'];
       $username = $_POST['username'];
       $pass = $_POST['password'];
+      $confirm_pass = $_POST['confirm-password'];
 
       $m_user = new m_user();
       $check_users = $m_user->get_all_user();
@@ -58,8 +60,12 @@ class c_user
           $_SESSION['err_username'] = 'Tài khoản này đã tồn tại!';
         }
       }
+
+      if($confirm_pass != $pass){
+        $_SESSION['err_confirm_pass'] = 'Mật khẩu và Mật khẩu xác nhận không giống nhau!';
+      }
       header("location:register.php");
-      if(!isset( $_SESSION['err_email']) && !isset($_SESSION['err_username'])){
+      if(!isset( $_SESSION['err_email']) && !isset($_SESSION['err_username']) && !isset($_SESSION['err_confirm_pass'] )){
         $this->add_user($name, $username, $pass, $email);
         header("location:login.php?msg=Đăng kí thành công!");
       }

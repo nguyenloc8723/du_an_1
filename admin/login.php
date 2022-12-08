@@ -51,7 +51,7 @@
             <a href="./register.php" style="text-decoration: none; color: #6c5ce7;">Register here</a>
           </div>
           <div class="forgot">
-            <a href="">forgot password?</a>
+            <a href="../?act=forgot-password">forgot password?</a>
           </div>
           <button type="submit" name="login">Login <i class="fa-solid fa-arrow-right"></i></button>
           <div class="back-index">

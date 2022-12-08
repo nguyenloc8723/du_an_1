@@ -41,7 +41,7 @@ session_start();
           <?php } ?>
 
           <div class="form-control">
-            <label for="username">User name</label>
+            <label for="username">Username</label>
             <input type="text" name="username" id="username" required>
             <i class="fa-solid fa-user"></i>
           </div>
@@ -55,6 +55,17 @@ session_start();
             <input type="password" name="password" id="password" required>
             <i class="fa-solid fa-lock"></i>
           </div>
+
+          <div class="form-control">
+            <label for="password">Confirm Password</label>
+            <input type="password" name="confirm-password" id="password" required>
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <?php if (isset($_SESSION['err_confirm_pass'])) { ?>
+            <div style="color: red; margin-top: -1.5rem; margin-bottom: 1rem;">
+              <span><?= $_SESSION['err_confirm_pass'] ?></span>
+            </div>
+          <?php } ?>
         </div>
         <!-- <?php if (isset($_POST['create'])) { ?>
           <div style="color: green;">
@@ -64,6 +75,7 @@ session_start();
           <?php 
           unset($_SESSION['err_email']);
           unset($_SESSION['err_username']);
+          unset($_SESSION['err_confirm_pass']);
           ?>
         <div class="register-foot">
           <a href="login.php" style="display: block; text-align: right; text-decoration: none; color: #6C5CE7; font-weight: 600; margin-bottom: 10px;">Login now</a>

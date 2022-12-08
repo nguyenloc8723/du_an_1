@@ -38,6 +38,23 @@
         <div class="right-body">
           <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
+              <label for=""><i class="fa-solid fa-file-signature"></i> Tên đăng nhập: </label>
+              <input type="text" value="<?= $user_info->ten_dang_nhap ?>" readonly>
+            </div>
+            <div class="form-group">
+              <label for=""><i class="fa-solid fa-lock"></i></i> Mật khẩu: </label>
+              <input type="password" value="<?= $user_info->mat_khau ?>" readonly>
+            </div>
+            <!-- <div class="form-group">
+              <label for=""><i class="fa-solid fa-envelope"></i> Email: </label>
+              <input type="email" value="<?= $user_info->email ?>" name='email'>
+            </div>
+            <?php if(isset($err['email'])) {?>
+                  <div>
+                    <span style="color: red;"><?= $err['email']?></span>
+                  </div>
+            <?php }?> -->
+            <div class="form-group">
               <label for=""><i class="fa-solid fa-signature"></i> Họ và tên: </label>
               <input type="text" value="<?= $user_info->ho_ten ?>" name="ho_ten">
             </div>
@@ -46,47 +63,38 @@
                     <span style="color: red;"><?= $err['ho_ten']?></span>
                   </div>
             <?php }?>
-            <div class="form-group">
-              <label for=""><i class="fa-solid fa-file-signature"></i> Tên đăng nhập: </label>
-              <input type="text" value="<?= $user_info->ten_dang_nhap ?>" readonly>
-            </div>
-            <div class="form-group">
-              <label for=""><i class="fa-solid fa-lock"></i></i> Mật khẩu: </label>
-              <input type="password" value="<?= $user_info->mat_khau ?>" readonly>
-            </div>
-            <div class="form-group">
-              <label for=""><i class="fa-solid fa-envelope"></i> Email: </label>
-              <input type="email" value="<?= $user_info->email ?>" name='email'>
-            </div>
-            <?php if(isset($err['email'])) {?>
-                  <div>
-                    <span style="color: red;"><?= $err['email']?></span>
-                  </div>
-            <?php }?>
+
             <div class="form-group">
               <label for=""><i class="fa-solid fa-location-dot"></i> Sđt: </label>
               <input type="text" value="<?= $user_info->sdt?>" name='sdt'>
             </div>
-            <div class="form-group">
-              <label for=""><i class="fa-solid fa-square-check"></i> Trạng thái tài khoản: </label>
-              <input type="text" value="<?= $user_info->kich_hoat == 1 ? 'Đã kích hoạt' : 'Chưa kích hoạt' ?>" readonly>
-            </div>
+            
             <div class="form-group">
               <label for=""><i class="fa-solid fa-image"></i> Avatar: </label>
               <img src="./public/images/<?= $user_info->hinh?>" alt="" width="100px" style="margin-right: 1rem;">
               <input type="hidden" name="old_img" value="<?= $user_info->hinh?>">
               <input type="file" name="hinh">
             </div>
-            <?php if(isset($err['err_img'])) {?>
-                  <div>
-                    <span style="color: red;"><?= $err['err_img']?></span>
-                  </div>
-            <?php }?>
 
             <div class="form-group">
               <label for=""><i class="fa-solid fa-location-dot"></i> Địa chỉ: </label>
               <input type="text" value="<?= $user_info->dia_chi?>" name='dia_chi'>
             </div>
+            <?php if(isset($err['dia_chi'])) {?>
+                  <div>
+                    <span style="color: red;"><?= $err['dia_chi']?></span>
+                  </div>
+            <?php }?>
+
+            <div class="form-group">
+              <label for=""><i class="fa-solid fa-square-check"></i> Trạng thái tài khoản: </label>
+              <input type="text" value="<?= $user_info->kich_hoat == 1 ? 'Đã kích hoạt' : 'Chưa kích hoạt' ?>" readonly>
+            </div>
+            <?php if(isset($err['err_img'])) {?>
+                  <div>
+                    <span style="color: red;"><?= $err['err_img']?></span>
+                  </div>
+            <?php }?>
             <button type="submit" name="edit" class="edit-btn">Sửa thông tin</button>
           </form>
         </div>

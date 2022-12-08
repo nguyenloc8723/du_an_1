@@ -65,6 +65,9 @@
                   </div>
             <?php }?>
             <button type="submit" name="change" class="edit-btn">Đổi mật khẩu</button>
+            <div class="forgot-pass-link">
+              <span>Bạn quên mật khẩu?</span><a href="?act=forgot-password&id=<?= $user_info->id_kh?>">Click vào đây!</a>
+            </div>
           </form>
         </div>
       </div>

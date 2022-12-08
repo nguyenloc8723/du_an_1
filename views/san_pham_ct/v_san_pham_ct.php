@@ -46,13 +46,10 @@
                 </div>
                 <div class="soluongct">
                     <div class="soluongct1">Số Lượng :</div>
-                    <div class="soluongct2" style="display: flex;
-        width: 100%;
-        height: 30px;">
-                        <span onclick="mathPrice(<?= $value->don_gia ?>,'minus',<?= $value->id_hh ?>,'money')" style=" cursor:pointer;padding:0 5px;border:1px solid ;
-                    ">-</span>
-                        <input style="text-align: center;" type="number" id="<?= $value->id_hh ?>" value="1" name="quantity" min="1" max="100" readonly />
-                        <span onclick="mathPrice(<?= $value->don_gia ?>,'plus',<?= $value->id_hh ?>,'money')" style=" cursor:pointer;border:1px solid ;padding:0 5px;">+</span>
+                    <div class="soluongct2" style="display: flex; width: 100%; height: 30px;">
+                        <span onclick="mathPrice(<?= $value->don_gia ?>,'minus',<?= $value->id_hh ?>,'money')" style=" cursor:pointer;padding:0 5px;border:1px solid;width: 20px;line-height: 30px;text-align: center; user-select: none; font-weight: bold; font-size: 30px;background-color: #d41830;color: #fff;">-</span>
+                        <input style="text-align: center; font-weight: bold; outline: none; height: 30px; width: 50px;" type="number" id="<?= $value->id_hh ?>" value="1" name="quantity" min="1" max="100" readonly />
+                        <span onclick="mathPrice(<?= $value->don_gia ?>,'plus',<?= $value->id_hh ?>,'money')" style=" cursor:pointer;border:1px solid ;padding:0 5px;width: 20px;line-height: 30px;text-align: center; user-select: none;font-weight: bold;background-color: #d41830;color: #fff;">+</span>
                     </div>
                 </div>                                                                                          
 
@@ -148,6 +145,10 @@
                 <h2>Vui lòng đăng nhập để bình luận!</h2>
             </div>
         <?php } ?>
+        <?php
+            unset($_SESSION['err_img']);
+            unset($_SESSION['err_noidung']);
+        ?>
         <script>
             if (window.history.replaceState) {
                 window.history.replaceState(null, null, window.location.href);

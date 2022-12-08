@@ -12,10 +12,9 @@ if (isset($_POST['quantity'])) {
     $quantity = $_POST['quantity'];
     $id = $_POST['id'];
     $price = $_POST['price'];
-    
+
     if (isset($_SESSION['cart']['' . $id . ''])) {
         $_SESSION['cart']['' . $id . ''] += $quantity;
-        
     } else {
         $_SESSION['cart']['' . $id . ''] = $quantity;
     }
@@ -60,7 +59,7 @@ if (isset($_POST['quantity'])) {
         </section>
         <section>
             <div class="order">
-               <form action="?act=order" method="POST">
+                <form action="?act=order" method="POST">
                     <input type="hidden">
                     <h1><?php echo count($_SESSION['cart']) ?> Món</h1>
                     <hr>
@@ -68,12 +67,15 @@ if (isset($_POST['quantity'])) {
                         <?php if (isset($total)) {
                             echo number_format($total);
                         }  ?>đ
-                    </p>    
-                    <input type="hidden" value="<?=$total?>" name="total">
+                    </p>
+                    <input type="hidden" value="<?= $total ?>" name="total">
                     <hr>
-                    <a href=""><button type="submit">Thanh toán cho sản phẩm</button></a>
-               </form>
-
+                    <?php if (count($_SESSION['cart']) == 0) { ?>
+                        <h4>Hiện tại chưa có sản phẩm nào!</h4>
+                    <?php } else { ?>
+                        <a href=""><button type="submit">Thanh toán cho sản phẩm</button></a>
+                    <?php } ?>
+                </form>
             </div>
         </section>
     </div>
