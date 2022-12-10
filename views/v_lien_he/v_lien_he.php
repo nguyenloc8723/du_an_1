@@ -44,7 +44,7 @@
                             referrerpolicy="no-referrer-when-downgrade"></iframe></div>
                 </div>
                 <div class="diadiem2">
-                    <form action="#">
+                    <form action="">
 
                         <div class="name">
                             <input type="text" class="form-control" placeholder="Tên Bạn ">
@@ -62,6 +62,7 @@
 
                         <div class="name3">
                             <input type="submit" value="Gửi Tin Nhắn" class="name31">
+                            
                         </div>
 
                     </form>

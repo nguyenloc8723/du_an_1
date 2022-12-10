@@ -1,4 +1,5 @@
 <?php
+session_start();
 class c_tim_hh
 {
   public function index()

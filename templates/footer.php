@@ -47,6 +47,8 @@
         </div>
 
     </footer>
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script src="../ckfinder/ckfinder.js"></script>
     <script>
         
                   if (window.history.replaceState) {

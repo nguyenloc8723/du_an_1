@@ -10,7 +10,7 @@ if (isset($_SESSION['users'])) {
         <div class="logo"><img src="public/images/logo.png" alt="" class="logo1"></div>
 
         <div class="timkiem">
-            <form action="../../du_an_1/index.php?act=search" method="post">
+            <form action="index.php?act=search" method="post">
                 <input type="search" placeholder="Tìm kiếm ......." class="search" required name="data" value="<?= isset($_POST['data']) ? $_POST['data'] : '' ?>">
                 <button class="nuttk" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
@@ -32,13 +32,13 @@ if (isset($_SESSION['users'])) {
                             <li><a href="?act=profile&id=<?= $data_user[0]['id_kh'] ?>"><i class="fa-solid fa-user"></i> Trang cá nhân</a></li>
                             <li><a href="?act=change-password&id=<?= $data_user[0]['id_kh']?>"><i class="fa-sharp fa-solid fa-key"></i> Đổi mật khẩu</a></li>
                             <?php if ($data_user[0]['vai_tro'] == 1) { ?>
-                                <li><a href="../../du_an_1/admin/dashboad.php"><i class="fa-solid fa-screwdriver-wrench"></i> Trang quản trị</a></li>
+                                <li><a href="./admin/dashboad.php"><i class="fa-solid fa-screwdriver-wrench"></i> Trang quản trị</a></li>
                             <?php } ?>
                         </ul>
                     </div>
 
                     <div class="dangki1">
-                        <i class="fa-solid fa-right-from-bracket" style="transform: rotate(-180deg);"></i> <a onclick="return confirm('Bạn có muốn đăng xuất ko?')" href="../../du_an_1/admin/logout.php?func=exit">Log-out</a>
+                        <i class="fa-solid fa-right-from-bracket" style="transform: rotate(-180deg);"></i> <a onclick="return confirm('Bạn có muốn đăng xuất ko?')" href="./admin/logout.php?func=exit">Log-out</a>
                     </div>
                 </div>
 
@@ -47,10 +47,10 @@ if (isset($_SESSION['users'])) {
             } else {
             ?>
                 <div class="dangki1">
-                    <i class="fa-solid fa-lock"></i> <a href="../../du_an_1/admin/login.php"> Đăng Nhập</a>
+                    <i class="fa-solid fa-lock"></i> <a href="./admin/login.php"> Đăng Nhập</a>
                 </div>
                 <div class="dangki1">
-                    <i class="fa-solid fa-pen-to-square"></i> <a href="../../du_an_1/admin/register.php"> Đăng Kí</a>
+                    <i class="fa-solid fa-pen-to-square"></i> <a href="./admin/register.php"> Đăng Kí</a>
                 </div>
             <?php } ?>
         </div>
@@ -59,9 +59,9 @@ if (isset($_SESSION['users'])) {
         <ul>
             <li><a href="index.php">Trang chủ</a></li>
             <li><a href="?act=san-pham&page=Sản phẩm">Sản phẩm</a></li>
-            <li><a href="allsanpham.php">Tin tức</a></li>
-            <li><a href="allsanpham.php">Giới thiệu </a></li>
-            <li><a href="allsanpham.php"> Liên hệ</a></li>
+            <li><a href="?act=news">Tin tức</a></li>
+            <li><a href="?act=hihi">Giới thiệu </a></li>
+            <li><a href="?act=contact"> Liên hệ</a></li>
         </ul>
     </div>
 </header>

@@ -88,10 +88,12 @@ header {
   border-radius: 0.5rem;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
   transform: translateX(350px);
+  opacity: 0;
   transition: all 0.5s;
 }
 .option.show {
   transform: translateX(0px);
+  opacity: 1;
 }
 /* .dangki1:hover>ul.option {
     

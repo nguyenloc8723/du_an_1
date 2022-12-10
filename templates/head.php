@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="public/spct.css">
     <link rel="stylesheet" href="public/sp.css">
     <link rel="stylesheet" href="public/profile.css">
-    <script src="../ckeditor/ckeditor.js"></script>
-    <script src="../ckfinder/ckfinder.js"></script>
     <link rel="stylesheet" href="public/cart.css">
+    <link rel="stylesheet" href="public/tintuc.css">
+    <link rel="stylesheet" href="public/lienhe.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="public/order-detail.css">
     <link rel="stylesheet" href="public/order.css">
+    <link rel="stylesheet" href="public/404.css">
     
 
 </head>

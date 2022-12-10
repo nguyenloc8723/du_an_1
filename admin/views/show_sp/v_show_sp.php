@@ -31,7 +31,7 @@
   </div>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-  <div id="myChart" style="width:100%; max-width:100%; height:500px;"></div>
+  <div id="myChart" style="width:80%; height:500px; transform: translateX(90px);"></div>
   <?php
   $sum = count($show_users) + count($show_lh) + count($show_sps) + count($show_bl);
   ?>
@@ -61,6 +61,7 @@
   </script>
 
   <div class="noidung">
+  <a href="?act=add-product"> <button type="submit">Thêm sp </button></a>
     <table border="1px">
       <tr>
 
@@ -84,7 +85,7 @@
           <td><?php echo $value->ten_hh ?></td>
           <td><?php echo $value->don_gia ?> </td>
           <td><?php echo $value->giam_gia ?></td>
-          <td><img src="../../../du_an_1/public/images/<?php echo $value->hinh ?>" alt="" width="100px"></td>
+          <td><img src="../public/images/<?php echo $value->hinh ?>" alt="" width="100px"></td>
 
           <td><?php echo $value->id_loai ?></td>
           <td><?php echo $value->dac_biet ?></td>
@@ -100,7 +101,6 @@
       <?php } ?>
 
     </table>
-    <a href="?act=add-product"> <button type="submit">Thêm sp </button></a>
   </div>
 
 </main>

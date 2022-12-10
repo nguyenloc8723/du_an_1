@@ -1,4 +1,5 @@
 <?php 
+session_start();
 class c_hh_danh_muc{
     public function hh_danh_muc(){
         include ("models/m_hh_danh_muc.php");

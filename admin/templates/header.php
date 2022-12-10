@@ -2,7 +2,7 @@
 if (isset($_SESSION['users'])) {
   $data_user = json_decode(json_encode($_SESSION['users']), true);
   if ($data_user[0]['vai_tro'] == '0') {
-    header('location:../../../du_an_1/index.php');
+    header('location:../index.php');
     exit;
   }
 }
@@ -14,20 +14,24 @@ if (isset($_SESSION['users'])) {
   <div class="sidebar-menu">
     <ul>
       <li>
-        <a href="dashboad.php"><i class="fa-brands fa-codepen"></i>Sản Phẩm </a>
+        <a href="dashboad.php"><i class="fa-brands fa-codepen"></i>Quản lí sản Phẩm </a>
       </li>
       <li>
-        <a href="?act=show-loai" class="tagA"><i class="fa-solid fa-sitemap"></i>Loại</a>
+        <a href="?act=show-loai" class="tagA"><i class="fa-solid fa-sitemap"></i>Quản lí danh mục</a>
       </li>
       <li>
-        <a href="?act=show-comments" class="tagA"><i class="fa-solid fa-clipboard"></i>Bình Luận</a>
+        <a href="?act=show-comments" class="tagA"><i class="fa-solid fa-comments"></i>Quản lí bình Luận</a>
       </li>
 
       <li>
-        <a href="?act=show-users" class="tagA"><i class="fa-solid fa-users"></i>Khách Hàng</a>
+        <a href="?act=show-users" class="tagA"><i class="fa-solid fa-users"></i>Quản lí khách Hàng</a>
       </li>
       <li>
-        <a href="../../../du_an_1/index.php" class="tagA"><i class="fa-solid fa-house"></i>Vào Website</a>
+        <a href="?act=show-orders" class="tagA"><i class="fa-solid fa-clipboard"></i>Quản lí đơn hàng</a>
+      </li>
+
+      <li>
+        <a href="../index.php" class="tagA"><i class="fa-solid fa-house"></i>Vào Website</a>
       </li>
 
     </ul>

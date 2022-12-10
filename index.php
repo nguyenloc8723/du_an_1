@@ -12,13 +12,21 @@ if (isset($_GET['act'])) {
       $c_san_pham->index();
       break;
 
-      // case 'lien-he' :
+      case 'news' :
+        include("controllers/c_news.php");
+        $c_news = new c_news();
+        $c_news->index();
+        break;
 
-      //   break;
-
-    case 'popular-products':
-      echo "trang sản phẩm phổ biến";
+    case 'contact':
+      include("controllers/c_contact.php");
+      $c_contact = new c_contact();
+      $c_contact->index();
       break;
+
+    // case 'popular-products':
+    //   echo "trang sản phẩm phổ biến";
+    //   break;
 
     case 'new-products':
       include("controllers/c_san_pham.php");
@@ -93,9 +101,7 @@ if (isset($_GET['act'])) {
       break;
 
     default:
-      include("controllers/c_hang_hoa.php");
-      $c_hang_hoa = new c_hang_hoa();
-      $c_hang_hoa->index();
+      include("views/404/v_404.php");
   }
 } else {
   include("controllers/c_hang_hoa.php");

@@ -162,11 +162,11 @@ class c_user_profile
         $mail->setFrom('datnx23396@gmail.com', 'Admin LĐshop' ); 
         $mail->addAddress($email); 
         $mail->isHTML(true);  // Set email format to HTML
-        $mail->Subject = 'Gửi lại mật khẩu từ LĐshop';
+        $mail->Subject = 'Thư gửi lại mật khẩu từ LĐshop';
         $noidungthu = "
-        <div>
+        <div style='line-height: 10px'>
         <h2>Email yêu cầu mật khẩu mới</h2>
-        <p>Xin chào: <b>$name.</b></p>
+        <p>Xin chào: <b>$name</b>.</p>
         <p>Chúng tôi nhận được yêu cầu lấy mật khẩu cho tài khoản của bạn.</p>
         <p>Mật khẩu mới của bạn là: <b>$pass</b> .Vui lòng không cung cấp cho người khác!</p>
         <br>

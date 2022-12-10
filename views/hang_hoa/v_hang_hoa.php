@@ -50,7 +50,7 @@
 
             <img src="public/images/admin1.jpg" alt="" class="anhkh">
 
-            <div class="tenkh">Tuấn anh </div>
+            <div class="tenkh">Tiến Trường </div>
             <div class="sao"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
             <div class="dgkh">“Xa xa, đằng sau những ngọn núi chữ, xa những quốc gia Vokalia và Consonantia, có

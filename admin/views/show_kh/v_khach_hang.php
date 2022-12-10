@@ -14,9 +14,11 @@
                 <th>Tên đăng nhập </th>
                 <th>Mật Khẩu </th>
                 <th>Email</th>
-                <th>Ảnh</th>
+                <th>Địa chỉ</th>
+                <th>Sđt</th>
                 <th>Kích hoạt</th>
                 <th>Vai Trò </th>
+                <th>Ảnh</th>
                 <th>Chỉnh sửa</th>
             </tr>
             <?php foreach ($m_khach_hangs as $key => $value) { ?>
@@ -27,10 +29,12 @@
                     <td><?php echo $value->ten_dang_nhap ?></td>
                     <td><?php echo $value->mat_khau ?></td>
                     <td><?php echo $value->email ?></td>
-                    <td><img src="../../../du_an_1/public/images/<?php echo $value->hinh ?>" alt="" width="50px"></td>
+                    <td><?php echo $value->dia_chi ?></td>
+                    <td><?php echo $value->sdt ?></td>
                     <td><?php echo $value->kich_hoat ?></td>
                     <td><?php echo $value->vai_tro ?></td>
-
+                    <td style="text-align: center;"><img src="../public/images/<?php echo $value->hinh ?>" alt="" width="100px"></td>
+                    
                     <td>
                         <a class="sx" href="?act=edit-user&id_kh=<?php echo $value->id_kh ?>">Sửa</a>
                         <a class="sx" onclick="return confirm('Bạn có muốn xóa ko')" href="?act=delete-user&id_kh=<?php echo $value->id_kh ?>">Xóa</a>

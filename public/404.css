@@ -1,0 +1,42 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo-404 {
+  width: 170px;
+  height: 50px;
+  margin-top: 2rem;
+  margin-bottom: 5.5rem;
+  text-align: center;
+}
+.content .img-404, .btn-home {
+  text-align: center;
+}
+.logo-404 img,.img-404 img {
+  width: 100%;
+  object-fit: cover;
+}
+.title {
+  margin: 2rem 0;
+}
+.title h2{
+  color: #D0011B;
+  font-size: 22px;
+}
+.btn-home a {
+  display: inline-block;
+  width: 200px;
+  height: 20px;
+  color: #307F26;
+  border: 2px solid #307F26;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
+
