@@ -12,11 +12,11 @@ if (isset($_GET['act'])) {
       $c_san_pham->index();
       break;
 
-      case 'news' :
-        include("controllers/c_news.php");
-        $c_news = new c_news();
-        $c_news->index();
-        break;
+    case 'news':
+      include("controllers/c_news.php");
+      $c_news = new c_news();
+      $c_news->index();
+      break;
 
     case 'contact':
       include("controllers/c_contact.php");
@@ -24,9 +24,9 @@ if (isset($_GET['act'])) {
       $c_contact->index();
       break;
 
-    // case 'popular-products':
-    //   echo "trang sản phẩm phổ biến";
-    //   break;
+      // case 'popular-products':
+      //   echo "trang sản phẩm phổ biến";
+      //   break;
 
     case 'new-products':
       include("controllers/c_san_pham.php");
@@ -62,6 +62,12 @@ if (isset($_GET['act'])) {
       include("controllers/c_order.php");
       $c_order = new c_order();
       $c_order->index();
+      break;
+
+    case 'delete-order':
+      include("controllers/c_order.php");
+      $c_order = new c_order();
+      $c_order->userUpdateOrder();
       break;
 
     case 'search':

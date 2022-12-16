@@ -3,24 +3,18 @@
 if (isset($_SESSION['users'])) {
     $data_user = json_decode(json_encode($_SESSION['users']), true);
 } else {
-    header('location:admin/login.php');
+    header('location:admin/login.php?msg=Bạn cần đăng nhập dể sử dụng chức năng này!');
 }
 if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = array();
-}
-if (isset($_POST['quantity'])) {
-    $quantity = $_POST['quantity'];
-    $id = $_POST['id'];
-    $price = $_POST['price'];
-
-    if (isset($_SESSION['cart']['' . $id . ''])) {
-        $_SESSION['cart']['' . $id . ''] += $quantity;
-    } else {
-        $_SESSION['cart']['' . $id . ''] = $quantity;
-    }
+    $_SESSION['cart'] = [];
 }
 
 ?>
+<?php if (isset($_GET['msg'])) { ?>
+    <script>
+        alert('<?= $_GET['msg'] ?>');
+    </script>
+<?php } ?>
 <main>
     <div class="cart-header">
         <p class="p-header">Shopping Cart</p>
@@ -38,25 +32,66 @@ if (isset($_POST['quantity'])) {
                 </thead>
 
                 <tbody>
-                    <?php foreach ($hang_hoas    as $x => $y) : ?>
-                        <?php foreach ($_SESSION['cart'] as $key => $value) {
-                            if ($y->id_hh == $key) { ?>
-                                <tr>
-                                    <td><a href="?act=cart&deleteid=<?= $key ?>"><i class="fa-solid fa-trash-can"></i></a></td>
-                                    <td><img src="./public/images/<?= $y->hinh ?>" alt=""></td>
-                                    <td><?= $y->ten_hh ?></td>
-                                    <td><?= number_format($y->don_gia) ?>đ</td>
-                                    <td><?= $value ?></td>
-                                    <td><strong class="money"><?= number_format(($y->don_gia) * ($value)) ?></strong>đ</td>
-                                    <input type="text" hidden value="<?php $total += (($y->don_gia) * ($value)) ?>">
-                                </tr>
-                        <?php }
-                        } ?>
-
-                    <?php endforeach ?>
+                    <?php $total = 0 ?>
+                    <?php foreach ($_SESSION['cart'] as $key => $value) {
+                        $total += $value['price'] * $value['quantity'] ?>
+                        <tr>
+                            <td><a onclick="return confirm('Bạn chắc chắn muốn xóa?')" href="?act=cart&deleteid=<?= $key ?>"><i class="fa-solid fa-trash-can"></i></a></td>
+                            <td><img src="./public/images/<?= $value['image'] ?>" alt=""></td>
+                            <td><?= $value['name'] ?></td>
+                            <td><?= number_format($value['price']) ?></td>
+                            <td><?= $value['quantity'] ?></td>
+                            <td><?= number_format($value['price'] * $value['quantity']) ?></td>
+                        </tr>
+                    <?php } ?>
+                    <tr>
+                        <td>Tổng tiền</td>
+                        <td colspan="6"><?= number_format($total) ?>đ</td>
+                    </tr>
                 </tbody>
             </table>
         </section>
+        <?php if($load_orders_user != []) {?>
+        <section id="cart-container" class="cart-container my-5">
+            <h2>Đơn hàng của bạn</h2><br>
+            <table width="100%">
+                <tr>
+                    <th>STT</th>
+                    <th>Mã đơn hàng</th>
+                    <th>Tên khách hàng</th>
+                    <th>Sđt</th>
+                    <th>Địa chỉ</th>
+                    <th>Tổng tiền</th>
+                    <th>Ngày đặt</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                </tr>
+                
+                <?php foreach ($load_orders_user as $key => $value) { ?>
+                    <tr>
+                        <td><?= $key + 1 ?></td>
+                        <td><?= $value->id ?></td>
+                        <td><?= $value->name ?></td>
+                        <td><?= $value->sdt ?></td>
+                        <td><?= $value->address ?></td>
+                        <td><?= number_format($value->total) ?>đ</td>
+                        <td><?= $value->create_at ?></td>
+                        <td><?php if ($value->status == 0) { ?>
+                                Chưa xác nhận
+                            <?php } else if ($value->status == 1) { ?>
+                                Đã xác nhận
+                            <?php } else if ($value->status == 2) { ?>
+                                Đang giao hàng
+                            <?php } else if ($value->status == 3) { ?>
+                                Đã hủy
+                            <?php } ?>
+                        </td>
+                        <td><button type="submit"><a  onclick="return confirm('Bạn thực sự muốn hủy đơn hàng này?')"  href="?act=delete-order&id=<?= $value->id?>&status=3" <?=$value->status > 0 ? "style='pointer-events: none;'" : ""  ?> >Hủy đơn hàng</a></button></td>
+                    </tr>
+                <?php } ?>
+            </table>
+        </section>
+        <?php }?>
         <section>
             <div class="order">
                 <form action="?act=order" method="POST">

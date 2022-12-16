@@ -55,7 +55,7 @@
               <span style="color: red;"><?= $err['err_email'] ?></span>
             </div>
           <?php } ?>
-          <button type="submit" name="forgot" class="edit-btn">Lấy mật khẩu mới</button>
+          <button type="submit" name="forgot" class="edit-btn" onclick="return confirm('Bạn chắc chắn email của mình còn hoạt động chứ?')">Lấy mật khẩu mới</button>
         </form>
       </div>
     </div>

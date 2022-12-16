@@ -7,7 +7,7 @@ function mathPrice(price, action, selector, moneyUiId) {
         quantityAfter = parseInt(quantity.value) + 1;
         break;
       case "minus":
-        if (quantity.value > 1) {
+        if (quantity.value >= 1) {
           quantityAfter = parseInt(quantity.value) - 1;
           break;
         }

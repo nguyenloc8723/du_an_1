@@ -55,9 +55,10 @@
 
                 <div class="muact" style="text-align: center;">
                 
-
+                        <input type="hidden" name="name" value="<?= $value->ten_hh?>">
                         <input type="hidden" value="<?= $value->don_gia ?>" name="price">
                         <input type="hidden" value="<?= $value->id_hh ?>" name="id">
+                        <input type="hidden" name="image" value="<?= $value->hinh?>">
                         <button type="submit" name="btn">
                             <a href="?act=cart">
                                 <div class="muact1"><i class="fa-solid fa-cart-shopping"></i> Thêm Vào Giỏ Hàng</div>
