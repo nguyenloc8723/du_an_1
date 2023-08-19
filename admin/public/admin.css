@@ -64,7 +64,7 @@
 }
 
 .main-content {
-  margin-left: 260px;
+  margin-left: 0;
 }
 header {
   display: flex;

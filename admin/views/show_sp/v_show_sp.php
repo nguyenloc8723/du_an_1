@@ -28,12 +28,14 @@
       </div>
     </div>
 
+
+
   </div>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
   <div id="myChart" style="width:80%; height:500px; transform: translateX(90px);"></div>
   <?php
-  $sum = count($show_users) + count($show_lh) + count($show_sps) + count($show_bl);
+  $sum = count($show_users) + count($show_lh) + count($show_sps) + count($show_bl) ;
   ?>
   <script>
     google.charts.load('current', {
@@ -48,6 +50,7 @@
         ['Categories', <?= count($show_lh) ?>],
         ['Product', <?= count($show_sps) ?>],
         ['Comments', <?= count($show_bl) ?>],
+       
       ]);
 
       var options = {

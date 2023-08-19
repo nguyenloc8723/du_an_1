@@ -20,6 +20,10 @@ class c_show_sp
         include("models/m_binh_luan.php");
         $m_show_bl = new m_binh_luan();
         $show_bl = $m_show_bl->doc_binh_luan();
+        
+        // include("models/m_order.php");
+        // $m_show_order = new m_order();
+        // $show_order = $m_show_order->loadOrder();
 
         // mảng dữ liệu hàng hóa 
         // goij ddgd views vaof đây 

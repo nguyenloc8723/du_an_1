@@ -26,7 +26,7 @@
         <a href="">
             <div class="tintucall">
                 <div class="tintucanh">
-                    <img src="public/images/sp4.png" alt="" class="anhtt">
+                    <img src="public/images/sp5.png" alt="" class="anhtt">
                 </div>
 
                 <div class="tintucnd">

@@ -2,6 +2,11 @@
 require_once "database.php";
 
 class m_order extends database {
+  public function loadOrder() {
+    $sql = "Select * from orders";
+    $this->setQuery($sql);
+    return $this->loadAllRows();
+  }
   public function insertOrder($id_kh, $address,$sdt, $total, $note){
     $sql = "INSERT INTO orders(id_kh, address, sdt, total, note) VALUES (?,?,?,?,?)";
     $this->setQuery($sql);

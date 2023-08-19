@@ -14,11 +14,11 @@
 
 <body>
   <main>
-    <?php if(isset($_GET['msg'])){?>
+    <?php if (isset($_GET['msg'])) { ?>
       <script>
-        alert('<?= $_GET['msg']?>');
+        alert('<?= $_GET['msg'] ?>');
       </script>
-    <?php }?>
+    <?php } ?>
     <div class="login-form-container">
       <form action="action_login.php" method="POST">
         <div class="login-head">
@@ -47,8 +47,8 @@
         </div>
         <div class="login-foot">
           <div class="craete-acc" style="font-size: 15px;">
-            Don't have account?
-            <a href="./register.php" style="text-decoration: none; color: #6c5ce7;">Register here</a>
+          Không có tài khoản?
+            <a href="./register.php" style="text-decoration: none; color: #6c5ce7;"> Đăng ký</a>
           </div>
           <div class="forgot">
             <a href="../?act=forgot-password">forgot password?</a>
@@ -59,7 +59,7 @@
           </div>
         </div>
       </form>
-      <?php unset($_SESSION['error_login'])?>
+      <?php unset($_SESSION['error_login']) ?>
     </div>
   </main>
 </body>

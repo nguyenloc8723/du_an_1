@@ -4,7 +4,7 @@ if (isset($_SESSION['users'])) {
     $data_user = json_decode(json_encode($_SESSION['users']), true);
 }
 if(isset($_POST['total'])){
-  $total =$_POST['total'];  
+  $total = $_POST['total'];  
   if(!isset($_SESSION['push'])){
     $_SESSION['pust'] =$total;
 }else{
@@ -29,15 +29,15 @@ if(isset($_POST['total'])){
             <div class="order-main_left">
                 <form action="?act=order" method="post">
 
-               
+                
                 <div class="left-top">
                     <h3>THỜI GIAN GIAO HÀNG</h3>
                     <p>Giao ngay</p>
                     <h3>GIAO TỚI:</h3>
                     <p>Địa chỉ</p>
-                    <input type="text" value="<?= $data_user[0]['dia_chi']?>" name="address">
-                    <p>Ghi chú cho đơn hàng</p>
-                    <input type="text" name="note">
+                    <input type="text" name="address" required>
+                    <p>Ghi chú cho đơn hàng</p> 
+                    <input type="text" name="note" required>
                 </div>
                 <div class="left-bottom">
                     <h3>THÔNG TIN CHI TIẾT:</h3>

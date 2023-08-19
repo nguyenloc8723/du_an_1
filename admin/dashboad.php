@@ -35,25 +35,25 @@ if (isset($_GET['act'])) {
       }
       break;
 
-      case 'show-orders':
-        if (isset($_SESSION['users'])) {
-          include("controllers/c_order.php");
-          $c_order = new c_order();
-          $c_order->index();
-        } else {
-          header('location:login.php');
-        }
-        break;
+      // case 'show-orders':
+      //   if (isset($_SESSION['users'])) {
+      //     include("controllers/c_order.php");
+      //     $c_order = new c_order();
+      //     $c_order->index();
+      //   } else {
+      //     header('location:login.php');
+      //   }
+      //   break;
 
-        case 'show-orders-detail':
-          if (isset($_SESSION['users'])) {
-            include("controllers/c_order.php");
-            $c_order = new c_order();
-            $c_order->order_detail();
-          } else {
-            header('location:login.php');
-          }
-          break;
+      //   case 'show-orders-detail':
+      //     if (isset($_SESSION['users'])) {
+      //       include("controllers/c_order.php");
+      //       $c_order = new c_order();
+      //       $c_order->order_detail();
+      //     } else {
+      //       header('location:login.php');
+      //     }
+      //     break;
   
 
       //quản lí data sản phẩm
